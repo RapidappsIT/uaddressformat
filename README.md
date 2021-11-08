@@ -1,6 +1,8 @@
 # UAddressFormat
 
 # Описание
+[![PyPI version](https://badge.fury.io/py/uaddressformat.svg)](https://badge.fury.io/py/uaddressformat)
+
 Исправление типов адреса на эталонные. Модуль для библиотеки [uaddress](https://github.com/martinjack/uaddress). 
 
 > Read this in other language: [English](README.en.md), [Русский](README.md), [Український](README.ua.md)
