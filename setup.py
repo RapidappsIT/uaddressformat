@@ -12,6 +12,7 @@ setup(
     description='Library for uaddress package. Format types addresses',
     version='1.0.1',
     author='Evgen Kytonin',
+    author_email='killfess@gmail.com',
     license='MIT',
     keywords=['module', 'parse', 'uaddress'],
     url='https://github.com/RapidappsIT/uaddressformat',
