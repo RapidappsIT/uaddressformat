@@ -10,10 +10,10 @@ except ImportError:
 setup(
     name='uaddressformat',
     description='Library for uaddress package. Format types addresses',
-    version='1.0.0',
+    version='1.0.1',
     author='Evgen Kytonin',
     license='MIT',
     keywords=['module', 'parse', 'uaddress'],
-    url='https://github.com/martinjack/uaddressformat',
+    url='https://github.com/RapidappsIT/uaddressformat',
     packages=['uaddressformat']
 )

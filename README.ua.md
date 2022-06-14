@@ -3,7 +3,7 @@
 # Опис
 [![PyPI version](https://badge.fury.io/py/uaddressformat.svg)](https://badge.fury.io/py/uaddressformat)
 
-Виправлення типів адреси на стандартні. Модуль для бібліотеки [uaddress](https://github.com/martinjack/uaddress). 
+Виправлення типів адреси на стандартні. Модуль для бібліотеки [uaddress](https://github.com/RapidappsIT/uaddress). 
 
 > Read this in other language: [English](README.en.md), [Русский](README.md), [Український](README.ua.md)
 

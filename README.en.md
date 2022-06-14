@@ -3,7 +3,7 @@
 # Description
 [![PyPI version](https://badge.fury.io/py/uaddressformat.svg)](https://badge.fury.io/py/uaddressformat)
 
-Correction of address types for reference. Library module [uaddress](https://github.com/martinjack/uaddress). 
+Correction of address types for reference. Library module [uaddress](https://github.com/RapidappsIT/uaddress). 
 
 > Read this in other language: [English](README.en.md), [Русский](README.md), [Український](README.ua.md)
 

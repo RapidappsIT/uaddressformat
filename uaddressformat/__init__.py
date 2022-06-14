@@ -7,7 +7,7 @@ types = {
     'area': 'пл.',
     'avenue': 'просп.',
     'lane': 'пров.',
-    'boulevard': 'бул.',
+    'boulevard': 'бульв.',
     'dway': 'проїзд',
     'microdistrict': 'мікр.',
     'quay': 'наб.',
@@ -220,6 +220,7 @@ def HouseNumber(str, additionally):
 def HouseNumberAdditionally(number, sub):
 
     number = re.sub(r"\\", "/", number)
+    number = re.sub(r"\/\/", "/", number)
 
     if not sub:
         if re.match(r'\d+\/[а-яА-ЯіІїЇґҐ0-9]+', number):
