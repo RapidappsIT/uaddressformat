@@ -43,6 +43,9 @@ python3 example.py
 ### Housing
 * `str`: String
 * `type`: Boolean
+### EntranceType
+* `str`: String
+* `type`: Boolean
 ### HouseNumberType
 * `str`: String
 * `house`: String
