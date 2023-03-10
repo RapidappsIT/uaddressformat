@@ -10,7 +10,7 @@ except ImportError:
 setup(
     name='uaddressformat',
     description='Library for uaddress package. Format types addresses',
-    version='1.0.1',
+    version='1.0.2',
     author='Evgen Kytonin',
     author_email='killfess@gmail.com',
     license='MIT',

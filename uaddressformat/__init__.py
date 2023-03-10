@@ -21,7 +21,8 @@ types = {
     'city': 'м.',
     'village': 'с.',
     'settlement': 'с-ще',
-    'urbansettlement': 'смт'
+    'urbansettlement': 'смт',
+    'entrancetype': 'підʼїзд'
 
 }
 
@@ -30,7 +31,7 @@ types = {
 #
 def clearTrash(str):
 
-    return re.sub(r'\.$', '', str)
+    return re.sub(r'\.$|\(', '', str)
 ##
 #  REGION TYPE
 #
@@ -163,6 +164,22 @@ def Housing(str, type = False):
             return types['housing']
 
     return str
+
+##
+# ENTRANCE TYPE
+#
+def EntranceType(str, type = False):
+    
+    pattern = r'^п(о|і)д(\’|\`|\”|\'|\“|\"|\_|\ʼ|\.?)(ъе|ї)зд$'
+
+    if str:
+        if not type:
+            return re.sub(pattern, '', str)
+        else:
+            return types['entrancetype']
+
+    return str
+
 ##
 # HOUSE NUMBER TYPE
 #

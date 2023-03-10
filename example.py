@@ -2,6 +2,7 @@ import uaddress
 import uaddressformat as formatter
 
 types = {
+  
     'Country': '',
     'RegionType': '',
     'Region': '',
@@ -27,6 +28,8 @@ types = {
     'RoomType': '',
     'Room': '',
     'Sector': '',
+    'EntranceType': '',
+    'Entrance': '',
     'FloorType': '',
     'Floor': '',
     'PostCode': '',
@@ -34,6 +37,7 @@ types = {
     'NotAddress': '',
     'Comment': '',
     'AdditionalData': ''
+
 }
 
 def formatStr(item):
@@ -69,6 +73,9 @@ def formatStr(item):
         if not types['HousingType']:
             types['HousingType'] = formatter.Housing(types[item], True)
 
+    if item == 'EntranceType':
+        types[item] = formatter.EntranceType(types[item], True)
+
     if item == 'HouseNumberType':
         types[item] = formatter.HouseNumberType(types[item], types['HouseNumber'])
 
@@ -90,7 +97,7 @@ def formatStr(item):
             types['ApartmentType'] = formatter.ApartmentType(types['ApartmentType'])
 
 
-parse_address = uaddress.parse(', Запорізька, Куйбишевський, С Мирське, вулиця Центральна,  8')
+parse_address = uaddress.parse('обл. Киев, м. Киев, РУСАНІВСЬКА НАБЕР., буд. 10, кв. 66, підʼїзд 3,  поверх 2')
 
 for item in parse_address:
                 
