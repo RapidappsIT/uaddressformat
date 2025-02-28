@@ -125,12 +125,11 @@ def Street(str, type = False):
 def StreetType(str):
     
     pattern = {
-
         'street': r'^(?:(вул)|влу|ул|вулиця)(?:\.|\.?)$',
-        'avenue': r'^(п(?:р|рос|роспект|\-рт|р\-т))(?:\.|\.?)$',
+        'avenue': r'^(п(?:р|рос|роспект|\-рт|р\-т|р\_т))(?:\.|\.?)$',
         'lane': r'^(про(?:вулок|улок|\.?)|пер(?:еулок|\.?))(?:\.|\.?)$',
         'area': r'^(?:(пл)|площа)(?:\.|\.?)$',
-        'boulevard': r'^(?:(бул)|бульвар|б\-р)(?:\.|\.?)$',
+        'boulevard': r'^(?:(бул)|бульвар|б(\-|\_)р)(?:\.|\.?)$',
         'dway': r'^(?:(проїзд)|проезд)(?:\.|\.?)$',
         'microdistrict': r'^(?:(м\-н)|мкр|мікр|м\/н|мкрн)(?:\.|\.?)$',
         'quay': r'^(?:(наб(?:ер|ережная|\.?)))(?:\.|\.?)$',
@@ -159,7 +158,7 @@ def Housing(str, type = False):
     if str:
 
         if not type:
-            return re.sub(pattern, '', str)
+            return re.sub(pattern, '', str.lower())
         else:
             return types['housing']
 
@@ -185,7 +184,7 @@ def EntranceType(str, type = False):
 #
 def HouseNumberType(str, house):
 
-    pattern = r'^(?:буд|бу|б|д(?:ом|\.?))(?:\.|$)'
+    pattern = r'^(?:буд|бу|б|д(?:ом|\.?)|№)(?:\.|$)'
 
     if str:
 
@@ -226,6 +225,8 @@ def HouseNumber(str, additionally):
             additionally = HouseNumberAdditionally(house, additionally)
             house = additionally['number']
             additionally = additionally['sub']
+
+        house = re.sub(r'\_', '/', house)
     
     return {
         'house': house,
@@ -236,9 +237,8 @@ def HouseNumber(str, additionally):
 #
 def HouseNumberAdditionally(number, sub):
 
-    number = re.sub(r"\\", "/", number)
-    number = re.sub(r"\/\/", "/", number)
-
+    number = re.sub(r"\\|\/\/|\'", "/", number)
+    
     if not sub:
         if re.match(r'\d+\/[а-яА-ЯіІїЇґҐ0-9]+', number):
             sub = re.sub(r'^\d+', '', number)
@@ -262,7 +262,7 @@ def HouseNumberAdditionally(number, sub):
 #
 def ApartmentType(str, type = False):
 
-    pattern = r'^(?:(кв)|\-кв)(?:\.|\.?)'
+    pattern = r'^(?:(кв)|\-кв|№)(?:\.|\.?)'
 
     if str:
 

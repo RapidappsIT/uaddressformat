@@ -1,3 +1,5 @@
 build
 dist
 *.egg-info
+CHANGELOG.md
+__pycache__
